@@ -75,6 +75,11 @@ describe( "hero", function() {
     assert.equal(50, heman.health);
   });
 
+  it("hero will lose health if bitten by rat", function() {
+    rat1.bitePerson(heman);
+    assert.equal(95, heman.health);
+  });
+
 });
 
 

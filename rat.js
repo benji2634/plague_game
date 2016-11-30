@@ -6,7 +6,7 @@ Rat.prototype = {
     food.isPoisoned = true;
   },
   bitePerson: function(person) {
-    return "bite bite nibble nibble"
+    person.health -= 5;
   }
 };
 
