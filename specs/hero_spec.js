@@ -7,18 +7,18 @@ var assert = require('assert');
 describe( "hero", function() {
 
   var heman; 
-  var food1;
-  var food2;
-  var food3;
-  var rat1;
+  var chicken;
+  var steak;
+  var apple;
+  var rat;
   var skeletor;
 
   beforeEach(function(){
     heman = new Hero("He-man", 100, "Power Sword", "Steak"); 
-    food1 = new Food("Chicken", 10);
-    food2 = new Food("Steak", 10);
-    food3 = new Food("Apple", 10);
-    rat1 = new Rat();
+    chicken = new Food("Chicken", 10);
+    steak = new Food("Steak", 10);
+    apple = new Food("Apple", 10);
+    rat = new Rat();
     skeletor = new Villain("Skeletor", 100, "Power Sword");
   });
 
@@ -44,24 +44,24 @@ describe( "hero", function() {
   });
 
   it("hero can eat food and increase health", function() {
-    heman.eat(food1);
+    heman.eat(chicken);
     assert.equal(110, heman.health);
   });
 
   it("hero can eat fav food and get health boost", function() {
-    heman.eat(food2);
+    heman.eat(steak);
     assert.equal(115, heman.health);
   });
 
   it("hero loses health when poisoned food is eaten", function() {
-    rat1.touchFood(food3);
-    heman.eat(food3);
+    rat.touchFood(apple);
+    heman.eat(apple);
     assert.equal(50, heman.health);
   });
 
   it("hero still loses health when poisoned food is fav food", function() {
-    rat1.touchFood(food2);
-    heman.eat(food2);
+    rat.touchFood(steak);
+    heman.eat(steak);
     assert.equal(50, heman.health);
   });
 
@@ -76,7 +76,7 @@ describe( "hero", function() {
   });
 
   it("hero will lose health if bitten by rat", function() {
-    rat1.bitePerson(heman);
+    rat.bitePerson(heman);
     assert.equal(95, heman.health);
   });
 

@@ -21,8 +21,4 @@ describe( "rat", function() {
     assert.equal(true, lettuce.isPoisoned);
   });
 
-  // it("rat can bite a person", function() {
-  //   assert.equal("bite bite nibble nibble", rat.bitePerson(heman));
-  // });
-
 });

@@ -3,18 +3,18 @@ var assert = require('assert');
 
 describe( "food", function() {
 
-  var food1;
+  var chicken;
 
   beforeEach(function() {
-  food1 = new Food("Chicken", 10, true); 
+  chicken = new Food("Chicken", 10, true); 
   });
 
   it("food has name", function() {
-    assert.equal("Chicken", food1.name);
+    assert.equal("Chicken", chicken.name);
   });
 
   it("food has energy", function() {
-    assert.equal(10, food1.energy);
+    assert.equal(10, chicken.energy);
   });
 
 });

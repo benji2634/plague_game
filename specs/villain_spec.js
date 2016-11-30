@@ -7,18 +7,16 @@ var assert = require('assert');
 describe( "villain", function() {
 
   var skeletor;
-  var food1;
-  var food2;
-  var food3;
-  var rat1;
+  var steak;
+  var apple;
+  var rat;
   var heman;
 
   beforeEach(function(){
     skeletor = new Villain("Skeletor", 100, "Power Sword");
-    food1 = new Food("Chicken", 10);
-    food2 = new Food("Steak", 10);
-    food3 = new Food("Apple", 10);
-    rat1 = new Rat();
+    steak = new Food("Steak", 10);
+    apple = new Food("Apple", 10);
+    rat = new Rat();
     heman = new Hero("He-man", 100, "Power Sword", "Steak"); 
   });
 
@@ -39,13 +37,13 @@ describe( "villain", function() {
   });
 
   it("villain can eat poisoned food and increase health", function() {
-    rat1.touchFood(food3);
-    skeletor.eat(food3);
+    rat.touchFood(apple);
+    skeletor.eat(apple);
     assert.equal(110, skeletor.health);
   });
 
   it("villain health is not affected when non-poisoned food is eaten", function() {
-    skeletor.eat(food2);
+    skeletor.eat(steak);
     assert.equal(100, skeletor.health);
   });
 
