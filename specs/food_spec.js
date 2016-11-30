@@ -3,7 +3,11 @@ var assert = require('assert');
 
 describe( "food", function() {
 
-  var food1 = new Food("Chicken", 10) 
+  var food1;
+
+  beforeEach(function() {
+  food1 = new Food("Chicken", 10, true); 
+  });
 
   it("food has name", function() {
     assert.equal("Chicken", food1.name);
